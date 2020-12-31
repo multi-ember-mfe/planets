@@ -4,6 +4,7 @@ import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
 
 import singleSpaEmber from './single-spa-ember';
+import singleSpaLeakedGlobals from 'single-spa-leaked-globals';
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;
@@ -13,6 +14,11 @@ export default class App extends Application {
 
 loadInitializers(App, config.modulePrefix);
 
+window.loader.noConflict({
+  require: 'planetsRequire',
+  requirejs: 'planetsRequireJS'
+});
+
 const emberLifecycles = singleSpaEmber({
   App,
   appName: 'planets',
@@ -21,4 +27,20 @@ const emberLifecycles = singleSpaEmber({
   }
 });
 
-export const { bootstrap, mount, unmount }  = emberLifecycles;
+const leakedGlobalsLifecycles = singleSpaLeakedGlobals({
+  globalVariableNames: ['Ember', 'loader'],
+})
+
+
+export const bootstrap = [
+  leakedGlobalsLifecycles.bootstrap,
+  emberLifecycles.bootstrap
+]
+export const mount = [
+  leakedGlobalsLifecycles.mount,
+  emberLifecycles.mount,
+]
+export const unmount = [
+  leakedGlobalsLifecycles.mount,
+  emberLifecycles.unmount,
+]

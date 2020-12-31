@@ -31,19 +31,19 @@ export default function singleSpaEmber(userOpts) {
 }
 
 function bootstrap() {
-  return Promise.resolve();
+  return Promise.resolve().then(() => {
+
+    window.planetsLoader = window.loader;
+    window.planetsEmber = window.Ember;
+  });
 }
 
 function mount(opts) {
   return Promise
     .resolve()
     .then(() => {
-      window.planets = window.planets || {};
-      if(window.planets.Ember) {
-        const { Ember, entries } = window.planets;
-        window.Ember = Ember;
-        window.require.entries = entries;
-      }
+      window.loader = window.planetsLoader;
+      window.Ember = window.planetsEmber;
       opts.applicationInstance = opts.App.create(opts.createOpts);
     })
 }
@@ -55,11 +55,6 @@ function unmount(opts) {
       opts.applicationInstance.destroy();
       opts.applicationInstance = null;
 
-      window.planets = window.planets || {};
-      window.planets = {
-        Ember: window.Ember,
-        entries: window.require.entries
-      };
       delete window.Ember;
     });
 }

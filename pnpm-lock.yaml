@@ -22,13 +22,13 @@ devDependencies:
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 0.1.6
   ember-qunit: 4.6.0
-  ember-resolver: 8.0.2
+  ember-resolver: 'link:../../../.nvm/versions/node/v12.18.2/pnpm-global/node_modules/ember-resolver'
   ember-source: 3.19.0
   ember-template-lint: 2.15.0
   eslint: 7.16.0
   eslint-plugin-ember: 8.14.0
   eslint-plugin-node: 11.1.0_eslint@7.16.0
-  loader.js: 4.7.0
+  loader.js: 'link:../../../.nvm/versions/node/v12.18.2/pnpm-global/node_modules/loader.js'
   npm-run-all: 4.1.5
   qunit-dom: 1.6.0
 lockfileVersion: 5.2
@@ -5298,19 +5298,6 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-i5VOGn0RP8XH+5qkYDOZshbqAvO6lHgF65D0gz8vRx4DszCIvJMJO+bbftBTfYMxp6rqG85etAA6pfNxE0DqsQ==
-  /ember-resolver/8.0.2:
-    dependencies:
-      babel-plugin-debug-macros: 0.3.3
-      broccoli-funnel: 3.0.3
-      broccoli-merge-trees: 4.2.0
-      ember-cli-babel: 7.23.0
-      ember-cli-version-checker: 5.1.1
-      resolve: 1.19.0
-    dev: true
-    engines:
-      node: '>= 10.*'
-    resolution:
-      integrity: sha512-BmCoPT8nf5uv0g2QkhMsrG1Gmu6MtXd6igfhCVzCTMTwZ97SxhJKqoMY62EP/av5HVSWBC/Sa1uGU5cQvX1Aog==
   /ember-rfc176-data/0.3.16:
     dev: true
     resolution:
@@ -7884,10 +7871,6 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
-  /loader.js/4.7.0:
-    dev: true
-    resolution:
-      integrity: sha512-9M2KvGT6duzGMgkOcTkWb+PR/Q2Oe54df/tLgHGVmFpAmtqJ553xJh6N63iFYI2yjo2PeJXbS5skHi/QpJq4vA==
   /locate-character/2.0.5:
     dev: true
     resolution:
