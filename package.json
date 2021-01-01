@@ -61,6 +61,8 @@
     "edition": "octane"
   },
   "dependencies": {
+    "ember-async-await-helper": "^0.2.0",
+    "p-map": "^4.0.0",
     "single-spa-ember": "^0.2.0",
     "single-spa-leaked-globals": "^1.0.0"
   }

@@ -8,7 +8,7 @@ module.exports = function(defaults) {
     storeConfigInMeta: false,
     fingerprint: {
       customHash: null
-    }
+    },
   });
 
 
